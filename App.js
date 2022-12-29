@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import Main from './Src/Screen';
 const App=()=>{
+  //push
   return(
     <Main></Main>
   )
