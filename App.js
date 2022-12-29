@@ -14,7 +14,6 @@ import {
   View,
 } from 'react-native';
 import Main from './Src/Screen';
-//dffbfbf
 const App=()=>{
   return(
     <Main></Main>
