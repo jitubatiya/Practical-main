@@ -11,6 +11,7 @@ const Serach = (props) => {
     const [serachText, setSerachText] = useState("")
     const [userData, setUserData] = useState(props.route.params.userData)
     const [filterData, setFilterData] = useState(props.route.params.userData)
+    const[varstate]=useState("jitu")
     const dispatch = useDispatch();
     const data = useSelector((store) => store.reducer.data);
     const onChangeText = (text) => {
@@ -24,11 +25,15 @@ const Serach = (props) => {
         setSerachText("")
         setFilterData(props.route.params.userData)
     }
+    const goBack = () => {
+        props.route.params.onBackData({name:varstate});
+        props.navigation.goBack();
+    }
     const headerView = () => {
         return (
             <View style={Styles.headerStyle}>
                 <View style={{ flexDirection: "row", alignSelf: "center" }}>
-                    <TouchableOpacity style={{ alignSelf: "center" }} onPress={() => props.navigation.goBack(null)}>
+                    <TouchableOpacity style={{ alignSelf: "center" }} onPress={() => goBack()}>
                         <Image style={Styles.backImg} resizeMode={"contain"} source={Images.arrowLeft} />
                     </TouchableOpacity>
                     <TextInput

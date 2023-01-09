@@ -35,12 +35,16 @@ const Home = (props) => {
         else
             return false
     }
+    const onBackData=(data)=>{
+        console.log("dffssf",data);
+        alert(data)
+    }
     const headerView = () => {
         return (
             <View style={Styles.headerView}>
                 <Text style={Styles.txtHeader}>{"The Breaking bad"}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => props.navigation.navigate("Serach", { userData: userData })}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate("Serach", { userData: userData,onBackData:onBackData })}>
                         <Image source={Images.serachIcon} style={Styles.serachIcon} resizeMode={"contain"} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => props.navigation.navigate("Favourites", { userData: userData.filter(item=>filterData(item)) })}>
